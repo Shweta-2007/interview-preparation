@@ -1,12 +1,33 @@
 import React from "react";
-import Header from "./Header";
+import Home from "./Home";
+import Body from "./Body";
+import About from "./About";
+import Contact from "./Contact";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const App = () => {
-  const country = "India";
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <Body />,
+    },
+    {
+      path: "/about",
+      element: <About />,
+    },
+    {
+      path: "/contact",
+      element: <Contact />,
+    },
+    {
+      path: "/home",
+      element: <Home />,
+    },
+  ]);
 
   return (
     <div>
-      <Header country={country} />
+      <RouterProvider router={appRouter} />
     </div>
   );
 };
