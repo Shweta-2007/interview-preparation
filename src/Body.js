@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { IMAGE_URL } from "./constants";
 import Header from "./Header";
+import useOnlineStatus from "./utils/useOnlineStatus";
 
 const Body = () => {
   let [index, setIndex] = useState(0);
   const country = "India";
+
+  const onlineStatus = useOnlineStatus();
 
   const handlePrevImage = () => {
     // setIndex(!index ? IMAGE_URL.length - 1 : index - 1);
@@ -31,6 +34,8 @@ const Body = () => {
         alignItems: "center",
       }}
     >
+      <h1>{onlineStatus ? "Online" : "Offline"}</h1>
+
       <button onClick={handlePrevImage}>Previous</button>
 
       <img src={IMAGE_URL[index]} alt="wallpaper" />
