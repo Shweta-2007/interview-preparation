@@ -1,4 +1,4 @@
-#Practice
+# Practice
 
 - create react app setup
 - props and state
@@ -6,3 +6,4 @@
 - Routing
 - Error page
 - Made a custom hook
+- Toggle button
